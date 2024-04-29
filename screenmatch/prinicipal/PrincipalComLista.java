@@ -4,7 +4,10 @@ import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 import br.com.alura.screenmatch.modelos.Titulo;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class PrincipalComLista {
     public static void main(String[] args) {
@@ -29,5 +32,22 @@ public class PrincipalComLista {
             }
 
         }
+
+        ArrayList<String> listaDeArtistas = new ArrayList<>();
+        listaDeArtistas.add("Tom Hanks");
+        listaDeArtistas.add("Adam Sandler");
+        listaDeArtistas.add("Angelina Jolie");
+        System.out.println(listaDeArtistas);
+
+        Collections.sort(listaDeArtistas);
+        System.out.println("Depois da ordenação: ");
+        System.out.println(listaDeArtistas);
+        System.out.println("Lista de títulos ordenados");
+        Collections.sort(lista);
+        System.out.println(lista);
+
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Ordenando por ano");
+        System.out.println(lista);
     }
 }
